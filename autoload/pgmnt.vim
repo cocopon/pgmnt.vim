@@ -18,7 +18,8 @@ function! pgmnt#compile(context, options) abort
             \ fnameescape(output_path))
     endif
   else
-    echo join(result_lines, "|")
+    vnew
+    call append(0, result_lines)
   endif
 endfunction
 

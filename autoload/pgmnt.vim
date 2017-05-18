@@ -11,7 +11,12 @@ function! pgmnt#compile(context, options) abort
         \ )
 
   if has_key(a:options, 'output')
-    call writefile(result_lines, a:options['output'])
+    let output_path = a:options['output']
+    call writefile(result_lines, output_path)
+    if get(g:, 'pgmnt_auto_source', 0)
+      execute printf('source %s', 
+            \ fnameescape(output_path))
+    endif
   else
     echo join(result_lines, "|")
   endif

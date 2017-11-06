@@ -1,5 +1,5 @@
 # pgmnt.vim
-Pgmnt is a template engine for creating Vim color scheme.
+Pgmnt is a template engine for creating Vim color schemes.
 
 The document is now in under construction. See the [source code of Iceberg][iceberg] for the introduction example.
 

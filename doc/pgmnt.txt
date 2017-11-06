@@ -1,0 +1,50 @@
+*pgmnt.txt*  Template engine for creating color schemes
+
+
+==============================================================================
+CONTENTS                                                      *pgmnt-contents*
+
+Intro ............................ |pgmnt-intro|
+Commands ......................... |pgmnt-commands|
+Options .......................... |pgmnt-options|
+About ............................ |pgmnt-about|
+
+
+==============================================================================
+Intro                                                            *pgmnt-intro*
+
+*Pgmnt* is a template engine for creating Vim color schemes.
+
+This document is now in under construction. See the source code of Iceberg
+for the introduction example:
+
+    https://github.com/cocopon/iceberg.vim/tree/master/src
+
+
+==============================================================================
+Commands                                                      *pgmnt-commands*
+
+:PgmntDevInspect                                            *:PgmntDevInspect*
+                        Print the link structure of the highlighting group
+                        on the cursor.
+
+
+==============================================================================
+Options                                                        *pgmnt-options*
+
+g:pgmnt_auto_source                                      *g:pgmnt_auto_source*
+                        If enabled, apply the compiled color scheme
+                        automatically after compilation.
+
+
+==============================================================================
+About                                                         *pgmnt-commands*
+
+|Pgmnt| is developed by cocopon and licensed under the MIT License.
+Visit the project page for the latest version:
+
+    https://github.com/cocopon/pgmnt.vim
+
+
+==============================================================================
+vim:ft=help:norl:ts=8:tw=78:

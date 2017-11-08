@@ -40,7 +40,7 @@ g:pgmnt_auto_source                                      *g:pgmnt_auto_source*
 
 
 ==============================================================================
-About                                                         *pgmnt-commands*
+About                                                         *pgmnt-about*
 
 |Pgmnt| is developed by cocopon and licensed under the MIT License.
 Visit the project page for the latest version:

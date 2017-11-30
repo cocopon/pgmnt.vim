@@ -2,11 +2,17 @@ let s:save_cpo = &cpoptions
 set cpoptions&vim
 
 
-function! s:render_value(context, key) abort
+function! s:render_value(context, key, indent) abort
   let value = get(a:context, a:key, '')
-  return (type(value) == type([]))
-        \ ? join(value, "\n")
-        \ : value
+  if type(value) != type([])
+    return a:indent . value
+  endif
+
+  let indented_lines = map(
+        \   copy(value),
+        \   {_, item -> (a:indent . item)}
+        \ )
+  return join(indented_lines, "\n")
 endfunction
 
 
@@ -14,10 +20,26 @@ function! pgmnt#template#render(template_lines, context) abort
   let rendered_lines = []
 
   for template_line in a:template_lines
+    " Rendering with indent
     let rendered_line = substitute(
           \   template_line,
+          \   '^\(\s\+\){{\s*\(\S\{-1,\}\)\s*}}',
+          \   {matches -> s:render_value(
+          \     a:context,
+          \     get(matches, 2, ''),
+          \     get(matches, 1, ''),
+          \   )},
+          \   'g'
+          \ )
+    " Rendering without indent
+    let rendered_line = substitute(
+          \   rendered_line,
           \   '{{\s*\(\S\{-1,\}\)\s*}}',
-          \   {matches -> s:render_value(a:context, get(matches, 1, ''))},
+          \   {matches -> s:render_value(
+          \     a:context,
+          \     get(matches, 1, ''),
+          \     '',
+          \   )},
           \   'g'
           \ )
     let rendered_sublines = split(rendered_line, "\n")

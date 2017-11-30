@@ -4,13 +4,13 @@ let s:assert = themis#helper('assert')
 
 function! s:suite.test_render_inline() 
   let template = [
-        \   'hello {{ name }}!',
+        \   '  hello {{ name }}!',
         \ ]
   let context = {
         \   'name': 'pgmnt',
         \ }
   let expected = [
-        \   'hello pgmnt!',
+        \   '  hello pgmnt!',
         \ ]
   call s:assert.equals(
         \   pgmnt#template#render(template, context),
@@ -90,6 +90,46 @@ function! s:suite.test_render_space()
         \ }
   let expected = [
         \   'foo',
+        \   'bar',
+        \ ]
+  call s:assert.equals(
+        \   pgmnt#template#render(template, context),
+        \   expected
+        \ )
+endfunction
+
+
+function! s:suite.test_render_indented_list()
+  let template = [
+        \   '  {{items}}',
+        \   '	{{items}}',
+        \ ]
+  let context = {
+        \   'items': ['foo', 'bar'],
+        \ }
+  let expected = [
+        \   '  foo',
+        \   '  bar',
+        \   '	foo',
+        \   '	bar',
+        \ ]
+  call s:assert.equals(
+        \   pgmnt#template#render(template, context),
+        \   expected
+        \ )
+endfunction
+
+
+function! s:suite.test_render_doubled_list()
+  let template = [
+        \   '  {{items}} {{items}}',
+        \ ]
+  let context = {
+        \   'items': ['foo', 'bar'],
+        \ }
+  let expected = [
+        \   '  foo',
+        \   '  bar foo',
         \   'bar',
         \ ]
   call s:assert.equals(

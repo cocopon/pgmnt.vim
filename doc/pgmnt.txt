@@ -5,6 +5,10 @@
 CONTENTS                                                      *pgmnt-contents*
 
 Intro ............................ |pgmnt-intro|
+Functions ........................ |pgmnt-functions|
+  Color functions .................. |pgmnt-color-functions|
+  Highlight functions .............. |pgmnt-highlight-functions|
+  Compile functions ................ |pgmnt-compile-functions|
 Commands ......................... |pgmnt-commands|
 Options .......................... |pgmnt-options|
 About ............................ |pgmnt-about|
@@ -19,6 +23,74 @@ This document is now in under construction. See the source code of Iceberg
 for the introduction example:
 
     https://github.com/cocopon/iceberg.vim/tree/master/src
+
+
+==============================================================================
+Functions                                                    *pgmnt-functions*
+
+
+------------------------------------------------------------------------------
+Color functions                                        *pgmnt-color-functions*
+
+
+pgmnt#color#hsl({hue}, {saturation}, f{lightness})         *pgmnt#color#hsl()*
+                        Create a hex color from HSL components. {hue} must be
+                        in the range [0, 359], {saturation} and {lightness}
+                        in the range [0, 1.0].
+                        
+pgmnt#color#hsv({hue}, {saturation}, {value})              *pgmnt#color#hsv()*
+                        Create a hex color from HSV components. {hue} must be
+                        in the range [0, 359], {saturation} and {lightness}
+                        in the range [0, 1.0].
+
+pgmnt#color#rgb({red}, {green}, {blue})                    *pgmnt#color#rgb()*
+                        Create a hex color from RGB components. Each component
+                        must be in the range [0, 255].
+
+pgmnt#color#adjust_color(                         *pgmnt#color#adjust_color()*
+    {color}[,
+    {hue}, {saturation}, {lightness}])
+                        Adjust some components of the specified color. Use
+                        named parameter to specify optional arguments.
+>
+                            pgmnt#color#adjust_color('#007f00', {
+                              \   'saturation': -0.05,
+                              \   'lightness':  +0.05,
+                              \ })
+<
+pgmnt#color#darken({color}, {amount})                   *pgmnt#color#darken()*
+                        Make the specified color darken.
+>
+                            pgmnt#color#darken('#007f00', +0.05)
+<
+pgmnt#color#lighten({color}, {amount})                 *pgmnt#color#lighten()*
+                        Make the specified color lighten.
+>
+                            pgmnt#color#lighten('#007f00', +0.05)
+<
+<
+pgmnt#color#mix({color1}, {color2}[, {weight}])            *pgmnt#color#mix()*
+                        Mix two colors. If {weight} is not specified, 0.5
+                        will be used.
+>
+                            pgmnt#color#mix('#ff0000', '#0000ff', 0.2)
+<
+
+------------------------------------------------------------------------------
+Highlight functions                                *pgmnt-highlight-functions*
+
+pgmnt#hi#group({names}, {attributes})                       *pgmnt#hi#group()*
+                        TODO:
+
+pgmnt#hi#link({name1}, {name2})                              *pgmnt#hi#link()*
+                        TODO:
+
+
+------------------------------------------------------------------------------
+Compile functions                                    *pgmnt-compile-functions*
+
+pgmnt#compile()                                              *pgmnt#compile()*
+                        TODO:
 
 
 ==============================================================================

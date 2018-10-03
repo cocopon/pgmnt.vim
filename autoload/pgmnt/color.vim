@@ -21,7 +21,7 @@ function! s:constrain(value, min, max) abort
 endfunction
 
 
-function! s:hoge(comp, min, max) abort
+function! s:cycle(comp, min, max) abort
   let c = a:comp
   let result = 0.0
 
@@ -97,19 +97,19 @@ function! pgmnt#color#hsl(h, s, l) abort
   if hh >= 360.0
     let hh -= 360.0
   endif
-  let r = s:hoge(hh, min, max)
+  let r = s:cycle(hh, min, max)
 
   let hh = h
   if hh >= 360.0
     let hh = 0.0
   endif
-  let g = s:hoge(hh, min, max)
+  let g = s:cycle(hh, min, max)
 
   let hh = h - 120.0
   if hh < 0.0
     let hh += 360.0
   endif
-  let b = s:hoge(hh, min, max)
+  let b = s:cycle(hh, min, max)
 
   return pgmnt#color#rgb(r, g, b)
 endfunction

@@ -38,6 +38,34 @@ function! s:suite.test_hsl()
 endfunction
 
 
+function! s:suite.test_hsv()
+  call s:assert.equals(
+        \   pgmnt#color#hsv(0, 0, 0),
+        \   '#000000'
+        \ )
+  call s:assert.equals(
+        \   pgmnt#color#hsv(0, 0, 0.5),
+        \   '#7f7f7f'
+        \ )
+  call s:assert.equals(
+        \   pgmnt#color#hsv(0, 0, 1.0),
+        \   '#ffffff'
+        \ )
+  call s:assert.equals(
+        \   pgmnt#color#hsv(-10, -20, -30),
+        \   '#000000'
+        \ )
+  call s:assert.equals(
+        \   pgmnt#color#hsv(240, 1.0, 0.5),
+        \   '#00007f'
+        \ )
+  call s:assert.equals(
+        \   pgmnt#color#hsv(160, 0.25, 0.75),
+        \   '#8fbfaf'
+        \ )
+endfunction
+
+
 function! s:suite.test_darken()
   call s:assert.equals(
         \   pgmnt#color#darken('#daf5a3', 0.2),

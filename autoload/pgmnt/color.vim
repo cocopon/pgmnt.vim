@@ -115,6 +115,26 @@ function! pgmnt#color#hsl(h, s, l) abort
 endfunction
 
 
+function! pgmnt#color#hsv(h, s, v) abort
+  let h = s:constrain(a:h * 1.0, 0.0, 360.0)
+  let s = s:constrain(a:s * 1.0, 0.0, 1.0)
+  let v = s:constrain(a:v * 1.0, 0.0, 1.0)
+
+  let l = (2.0 - s) * v / 2.0
+  if l != 0.0
+    if l == 1.0
+      let s = 0.0
+    elseif l < 0.5
+      let s = a:s * a:v / (l * 2.0)
+    else
+      let s = a:s * a:v / (2.0 - l * 2.0)
+    endif
+  endif
+
+  return pgmnt#color#hsl(h, s, l)
+endfunction
+
+
 function! pgmnt#color#adjust_color(hex, options) abort
   let hsl_comps = s:rgb_comps_to_hsl_comps(
         \   s:hex_to_rgb_comps(a:hex)

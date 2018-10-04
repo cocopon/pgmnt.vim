@@ -37,23 +37,23 @@ Color functions                                        *pgmnt-color-functions*
 
 pgmnt#color#hsl({hue}, {saturation}, f{lightness})         *pgmnt#color#hsl()*
                         Create a hex color from HSL components. {hue} must be
-                        in the range [0, 359], {saturation} and {lightness}
-                        in the range [0, 1.0].
+                        in the range [0, 360), {saturation} and {lightness}
+                        in the range [0, 1].
                         
 pgmnt#color#hsv({hue}, {saturation}, {value})              *pgmnt#color#hsv()*
                         Create a hex color from HSV components. {hue} must be
-                        in the range [0, 359], {saturation} and {lightness}
-                        in the range [0, 1.0].
+                        in the range [0, 360), {saturation} and {lightness}
+                        in the range [0, 1].
 
 pgmnt#color#rgb({red}, {green}, {blue})                    *pgmnt#color#rgb()*
                         Create a hex color from RGB components. Each component
                         must be in the range [0, 255].
 
 pgmnt#color#adjust_color(                         *pgmnt#color#adjust_color()*
-    {color}[,
-    {hue}, {saturation}, {lightness}])
-                        Adjust some components of the specified color. Use
-                        named parameter to specify optional arguments.
+    {color}[, {adjustments}])
+                        Adjust some components of the specified color.
+                        {adjustments} can have these values: "hue",
+                        "saturation", and "lightness".
 >
                             pgmnt#color#adjust_color('#007f00', {
                               \   'saturation': -0.05,

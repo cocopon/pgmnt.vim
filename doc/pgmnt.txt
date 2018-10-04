@@ -4,6 +4,7 @@
 ==============================================================================
 CONTENTS                                                      *pgmnt-contents*
 
+
 Intro ............................ |pgmnt-intro|
 Functions ........................ |pgmnt-functions|
   Color functions .................. |pgmnt-color-functions|
@@ -16,6 +17,7 @@ About ............................ |pgmnt-about|
 
 ==============================================================================
 Intro                                                            *pgmnt-intro*
+
 
 *Pgmnt* is a template engine for creating Vim color schemes.
 
@@ -68,7 +70,6 @@ pgmnt#color#lighten({color}, {amount})                 *pgmnt#color#lighten()*
 >
                             pgmnt#color#lighten('#007f00', +0.05)
 <
-<
 pgmnt#color#mix({color1}, {color2}[, {weight}])            *pgmnt#color#mix()*
                         Mix two colors. If {weight} is not specified, 0.5
                         will be used.
@@ -78,6 +79,7 @@ pgmnt#color#mix({color1}, {color2}[, {weight}])            *pgmnt#color#mix()*
 
 ------------------------------------------------------------------------------
 Highlight functions                                *pgmnt-highlight-functions*
+
 
 pgmnt#hi#group({names}, {attributes})                       *pgmnt#hi#group()*
                         TODO:
@@ -89,12 +91,14 @@ pgmnt#hi#link({name1}, {name2})                              *pgmnt#hi#link()*
 ------------------------------------------------------------------------------
 Compile functions                                    *pgmnt-compile-functions*
 
+
 pgmnt#compile()                                              *pgmnt#compile()*
                         TODO:
 
 
 ==============================================================================
 Commands                                                      *pgmnt-commands*
+
 
 :PgmntDevInspect                                            *:PgmntDevInspect*
                         Print the link structure of the highlighting group
@@ -106,6 +110,7 @@ Commands                                                      *pgmnt-commands*
 ==============================================================================
 Options                                                        *pgmnt-options*
 
+
 g:pgmnt_auto_source                                      *g:pgmnt_auto_source*
                         If enabled, apply the compiled color scheme
                         automatically after compilation.
@@ -113,6 +118,7 @@ g:pgmnt_auto_source                                      *g:pgmnt_auto_source*
 
 ==============================================================================
 About                                                            *pgmnt-about*
+
 
 |Pgmnt| is developed by cocopon and licensed under the MIT License.
 Visit the project page for the latest version:

@@ -35,7 +35,7 @@ Functions                                                    *pgmnt-functions*
 Color functions                                        *pgmnt-color-functions*
 
 
-pgmnt#color#hsl({hue}, {saturation}, f{lightness})         *pgmnt#color#hsl()*
+pgmnt#color#hsl({hue}, {saturation}, {lightness})          *pgmnt#color#hsl()*
                         Create a hex color from HSL components. {hue} must be
                         in the range [0, 360), {saturation} and {lightness}
                         in the range [0, 1].

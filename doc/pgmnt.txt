@@ -24,7 +24,7 @@ Intro                                                            *pgmnt-intro*
 This document is now in under construction. See the source code of Iceberg
 for the introduction example:
 
-    https://github.com/cocopon/iceberg.vim/tree/master/src
+  https://github.com/cocopon/iceberg.vim/tree/master/src
 
 
 ==============================================================================
@@ -36,45 +36,54 @@ Color functions                                        *pgmnt-color-functions*
 
 
 pgmnt#color#hsl({hue}, {saturation}, {lightness})          *pgmnt#color#hsl()*
-                        Create a hex color from HSL components. {hue} must be
-                        in the range [0, 360), {saturation} and {lightness}
-                        in the range [0, 1].
+
+  Create a hex color from HSL components. {hue} must be in the range
+  [0, 360), {saturation} and {lightness} in the range [0, 1].
                         
+
 pgmnt#color#hsv({hue}, {saturation}, {value})              *pgmnt#color#hsv()*
-                        Create a hex color from HSV components. {hue} must be
-                        in the range [0, 360), {saturation} and {lightness}
-                        in the range [0, 1].
+
+  Create a hex color from HSV components. {hue} must be in the range
+  [0, 360), {saturation} and {lightness} in the range [0, 1].
+
 
 pgmnt#color#rgb({red}, {green}, {blue})                    *pgmnt#color#rgb()*
-                        Create a hex color from RGB components. Each component
-                        must be in the range [0, 255].
+
+  Create a hex color from RGB components. Each component must be in the
+  range [0, 255].
+
 
 pgmnt#color#adjust_color(                         *pgmnt#color#adjust_color()*
     {color}[, {adjustments}])
-                        Adjust some components of the specified color.
-                        {adjustments} can have these values: "hue",
-                        "saturation", and "lightness".
+
+  Adjust some components of the specified color.  {adjustments} can have
+  these values: "hue", "saturation", and "lightness".
 >
-                            pgmnt#color#adjust_color('#007f00', {
-                              \   'saturation': -0.05,
-                              \   'lightness':  +0.05,
-                              \ })
+    pgmnt#color#adjust_color('#007f00', {
+      \   'saturation': -0.05,
+      \   'lightness':  +0.05,
+      \ })
 <
+
 pgmnt#color#darken({color}, {amount})                   *pgmnt#color#darken()*
-                        Make the specified color darken.
+
+  Make the specified color darken.
 >
-                            pgmnt#color#darken('#007f00', +0.05)
+    pgmnt#color#darken('#007f00', +0.05)
 <
+
 pgmnt#color#lighten({color}, {amount})                 *pgmnt#color#lighten()*
-                        Make the specified color lighten.
+
+  Make the specified color lighten.
 >
-                            pgmnt#color#lighten('#007f00', +0.05)
+    pgmnt#color#lighten('#007f00', +0.05)
 <
+
 pgmnt#color#mix({color1}, {color2}[, {weight}])            *pgmnt#color#mix()*
-                        Mix two colors. If {weight} is not specified, 0.5
-                        will be used.
+
+  Mix two colors. If {weight} is not specified, 0.5 will be used.
 >
-                            pgmnt#color#mix('#ff0000', '#0000ff', 0.2)
+    pgmnt#color#mix('#ff0000', '#0000ff', 0.2)
 <
 
 ------------------------------------------------------------------------------
@@ -82,10 +91,13 @@ Highlight functions                                *pgmnt-highlight-functions*
 
 
 pgmnt#hi#group({names}, {attributes})                       *pgmnt#hi#group()*
-                        TODO:
+
+  TODO:
+
 
 pgmnt#hi#link({name1}, {name2})                              *pgmnt#hi#link()*
-                        TODO:
+
+  TODO:
 
 
 ------------------------------------------------------------------------------
@@ -93,7 +105,8 @@ Compile functions                                    *pgmnt-compile-functions*
 
 
 pgmnt#compile()                                              *pgmnt#compile()*
-                        TODO:
+
+  TODO:
 
 
 ==============================================================================
@@ -101,10 +114,10 @@ Commands                                                      *pgmnt-commands*
 
 
 :PgmntDevInspect                                            *:PgmntDevInspect*
-                        Print the link structure of the highlighting group
-                        on the cursor.
-                        (NOTE: If you install |colorswatch.vim|, this command
-                        will show more detailed information)
+
+  Print the link structure of the highlighting group on the cursor.
+  NOTE: If you install |colorswatch.vim|, this command will show more detailed
+  information
 
 
 ==============================================================================
@@ -112,8 +125,9 @@ Options                                                        *pgmnt-options*
 
 
 g:pgmnt_auto_source                                      *g:pgmnt_auto_source*
-                        If enabled, apply the compiled color scheme
-                        automatically after compilation.
+
+  If enabled, apply the compiled color scheme automatically after
+  compilation.
 
 
 ==============================================================================
@@ -123,8 +137,8 @@ About                                                            *pgmnt-about*
 |Pgmnt| is developed by cocopon and licensed under the MIT License.
 Visit the project page for the latest version:
 
-    https://github.com/cocopon/pgmnt.vim
+  https://github.com/cocopon/pgmnt.vim
 
 
 ==============================================================================
-vim:ft=help:norl:ts=8:tw=78:
+vim:ft=help:norl:ts=2:sw=2tw=78:

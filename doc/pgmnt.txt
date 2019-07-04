@@ -113,13 +113,6 @@ pgmnt#compile()                                              *pgmnt#compile()*
 Commands                                                      *pgmnt-commands*
 
 
-:PgmntDevInspect                                            *:PgmntDevInspect*
-
-  Print the link structure of the highlighting group on the cursor.
-  NOTE: If you install |colorswatch.vim|, this command will show more detailed
-  information
-
-
 ==============================================================================
 Options                                                        *pgmnt-options*
 

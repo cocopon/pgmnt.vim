@@ -1,0 +1,3 @@
+# gitignore contains Icon^M <- CRLF end
+# skip autocrlf,diff enable -> not binary, set -text
+.gitignore      -text

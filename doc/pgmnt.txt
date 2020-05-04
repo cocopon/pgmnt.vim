@@ -134,4 +134,4 @@ Visit the project page for the latest version:
 
 
 ==============================================================================
-vim:ft=help:norl:ts=2:sw=2tw=78:
+vim:ft=help:norl:ts=2:sw=2:tw=78:

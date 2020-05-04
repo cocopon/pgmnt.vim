@@ -17,7 +17,7 @@ function! pgmnt#hi#group(name_or_names, attributes) abort
 
   return map(
         \   names,
-        \   '"hi! " . v:val . " " . joined_args'
+        \   '"hi " . v:val . " " . joined_args'
         \ )
 endfunction
 
